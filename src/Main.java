@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 public class Main {
 
@@ -12,6 +13,9 @@ public class Main {
         c) napisać metodę, która wypisze otrzymane wartości,
         d) wstawić wywołanie metody do metody main
         */
+        int[] tablica = new int[20];
+        uzupelnianie1(tablica);
+        wypisanie1(tablica);
 
         /* zad.2
         a) stworzyc tablicę typu String[6],
@@ -19,6 +23,10 @@ public class Main {
             (użyć do tego pętli i klasy Scanner),
         c) napisać metodę która wyświetli elementy tablicy od ostatniego elementu do elementu o indeksie 0,
         */
+        String[] tablica2 = new String[6];
+        uzupelnianie2(tablica2);
+        wypisanie2(tablica2);
+
 
         /* zad.3
         a) napisać metodę która przyjmuje 1 parametr typu String, metoda nic nie zwraca, tylko
@@ -28,6 +36,12 @@ public class Main {
         c) napisać metodę o tej samej nazwie jak w punkcie a) i b) która przyjmuje wasze imie,
             nazwisko i wiek (int), a następnie wszystko wyświetli,
         */
+        String imie = "Bartek";
+        String nazwisko = "Stefański";
+        int wiek = 21;
+        wypiszImie(imie);
+        wypiszImie(imie, nazwisko);
+        wypiszImie(imie, nazwisko, wiek);
 
         /* zad.4
         a) napisać metodę która przyjmuje 2 parametry typu int i zwraca ich sumę, którą przypiszemy do zmiennej,
@@ -36,8 +50,51 @@ public class Main {
             którą przypiszemy do zmiennej, coś takiego:     zmiennaB = metoda(7, 8, 9); <-- wywołanie metody
         c) wyświetlić sumę wywołań obu metod ---> print("wynik: " + (metoda(8, 9) + metoda(2, 3, 4));
         */
+        int l1 = 12;
+        int l2 = 13;
+        int zmienna = suma(l1,l2);
+        int zmienna2 = suma(15, 19, 7);
+        System.out.print("wynik: " + suma(12, 13) + suma(15, 19, 7));
+    }
+    public static void uzupelnianie1(int[] dwadziescia){
+        int h = 0;
+        for (int i = 40; i>=21; i--){
+            dwadziescia[h] = i;
+            h++;
+        }
+    }
+    public static void wypisanie1(int[] tablica){
+        for (int i = 0; i <20; i++){
+            System.out.printf("Pozycja %d: " + tablica[i] + '\n');
+        }
+    }
 
-
+    public static void uzupelnianie2(String[] x){
+        Scanner scan = new Scanner(System.in);
+        for (int i = 0; i < 6; i++){
+            String h = scan.nextLine();
+            x[i] = h;
+        }
+    }
+    public static void wypisanie2(String[] x){
+        for (int i = 5; i >=0; i--){
+            System.out.printf("Pozycja nr. %d : " + x[i] + "\n", i);
+        }
+    }
+    public static void wypiszImie(String im){
+        System.out.printf(im);
+    }
+    public static void wypiszImie(String im, String nazw){
+        System.out.printf(im, nazw);
+    }
+    public static void wypiszImie(String im, String nazw, int wiek){
+        System.out.printf(im,nazw,wiek);
+    }
+    public static int suma(int liczba1, int liczba2){
+        return liczba1 + liczba2;
+    }
+    public static int suma(int liczba1, int liczba2, int liczba3){
+        return liczba1 + liczba2 + liczba3;
     }
 
 }
