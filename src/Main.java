@@ -62,7 +62,7 @@ public class Main {
         }
         /* zad.3
         a) sprawdzić jak zachowuje się pętla while gdy w jej warunku damy true --> while(true)
-        b) a jak gdy damy false --> while(false)
+        b) a jak gdy damy false --> while(false)a
         */
 
         int k = 0;
